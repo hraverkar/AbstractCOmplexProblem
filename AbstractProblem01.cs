@@ -5,24 +5,28 @@ namespace ConsoleApp50
   abstract class ABC
   {
     public abstract void FirstMethod();
-    void SecondMethod()
-    {
-      Console.WriteLine("Second method");
-    }
+    public abstract void SecondMethod();
+    
   }
 
   class DEF : ABC
   {
     public override void FirstMethod()
     {
+      Console.WriteLine("first Override method");
+    }
+    public override void SecondMethod()
+    {
       Console.WriteLine("Second Override method");
     }
   }
   class Program
   {
-    static void Main(string[] args)
+    static void Main()
     {
-      Console.WriteLine("Hello World!");
+      DEF def = new DEF();
+      def.FirstMethod();
+      def.SecondMethod();
     }
   }
 }
